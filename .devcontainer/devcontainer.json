@@ -1,0 +1,35 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "하이브리드 RAG 개발 환경",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile"
+  },
+  "runArgs": [
+    "--gpus=all",
+    "--network=host"
+  ],
+  "mounts": [
+    "source=${localEnv:HOME}/.cache/huggingface,target=/home/appuser/.cache/huggingface,type=bind,consistency=cached"
+  ],
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+  "remoteUser": "appuser",
+
+  // --- 디버깅을 위해 postCreateCommand를 일시적으로 비워둡니다. ---
+  // --- 이미지가 성공적으로 빌드된 후, 패키지 설치 명령어를 다시 추가할 것입니다. ---
+  "postCreateCommand": ""
+}

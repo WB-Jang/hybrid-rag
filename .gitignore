@@ -1,0 +1,3 @@
+# Secrets and environment variables
+.env
+app/llms/.env
