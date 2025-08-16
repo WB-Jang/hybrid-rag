@@ -18,7 +18,7 @@ llama3_8b_llm = ChatGroq(model="llama3-8b-8192", temperature=0.0, max_tokens=200
 gpt4o_mini_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, streaming=True)
 gpt4o_llm = ChatOpenAI(model="gpt-4o", temperature=0, streaming=True)
 gpt3_5_turbo_llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, streaming=True)
-gemini_15_flash_llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0,streaming=True)
+gemini_15_flash_llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",temperature=0)
 
 
 
